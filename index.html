@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="A searchable, read-only catalogue of essay arguments, examples and quotations." />
+    <title>Essay Argument Library</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script src="./app.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to catalogue</a>
+    <header class="topbar">
+      <div class="brand-lockup">
+        <span class="brand-mark" aria-hidden="true">EL</span>
+        <div><strong>Essay Argument Library</strong><small>Personal revision index</small></div>
+      </div>
+      <span class="read-only">Read-only collection</span>
+    </header>
+
+    <main id="workspace">
+      <section class="intro">
+        <div>
+          <p class="eyebrow">Your submitted collection</p>
+          <h1>Find the argument.<br />Recall the evidence.</h1>
+          <p class="lede">Browse essays by topic, inspect each thesis or antithesis, and recover the examples and quotations attached to every argument.</p>
+        </div>
+        <div class="metrics" id="metrics" aria-label="Collection totals"></div>
+      </section>
+
+      <nav class="tabs" aria-label="Library views">
+        <button class="tab active" data-view="library" aria-selected="true">Essay library</button>
+        <button class="tab" data-view="quotes" aria-selected="false">Quotations</button>
+        <button class="tab" data-view="compare" aria-selected="false">Compare</button>
+      </nav>
+
+      <section class="controls" aria-label="Catalogue controls">
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search arguments, examples, countries, authors…" aria-label="Search essays, arguments, examples and quotations" /></label>
+        <select id="structure" aria-label="Filter by essay structure"><option>All structures</option></select>
+        <button id="clear" class="text-button" hidden>Clear</button>
+      </section>
+
+      <section id="library-view" class="view active">
+        <div class="library-layout">
+          <aside class="topic-index">
+            <p class="eyebrow">Topic index</p>
+            <nav id="categories" aria-label="Topic categories"></nav>
+            <div class="source-note"><strong>Source note</strong><p>Arguments remain in their original essay order. Content has not been fact-checked.</p></div>
+          </aside>
+          <section class="results">
+            <div class="section-heading"><div><p class="eyebrow" id="result-label">Complete catalogue</p><h2 id="result-count">0 essays</h2></div><small>Sorted by topic and title</small></div>
+            <div id="essay-cards" class="essay-grid"></div>
+          </section>
+        </div>
+      </section>
+
+      <section id="quotes-view" class="view">
+        <div class="section-heading"><div><p class="eyebrow">Quotation index</p><h2 id="quote-count">0 quotations</h2></div><small>Short excerpts grouped by source essay</small></div>
+        <div id="quote-grid" class="quote-grid"></div>
+      </section>
+
+      <section id="compare-view" class="view">
+        <div class="compare-controls">
+          <label>Essay A<select id="compare-a"></select></label>
+          <span aria-hidden="true">⇄</span>
+          <label>Essay B<select id="compare-b"></select></label>
+        </div>
+        <div id="comparison" class="comparison"></div>
+      </section>
+    </main>
+
+    <dialog id="essay-dialog" aria-labelledby="dialog-title">
+      <button id="dialog-close" class="dialog-close" aria-label="Close essay contents">×</button>
+      <div id="dialog-content"></div>
+    </dialog>
+
+    <div id="loading" class="loading" role="status">Loading essay catalogue…</div>
+    <noscript><p class="fatal">JavaScript is required to browse this catalogue.</p></noscript>
+  </body>
+</html>
