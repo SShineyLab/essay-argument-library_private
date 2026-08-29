@@ -76,3 +76,39 @@ html,body{max-width:100%;overflow-x:hidden}button,.tab,.topic-index button,.quot
   .essay-card{display:block}
   .stats{gap:6px 10px}
 }
+
+/* Keep complete essay titles visible on mobile cards */
+@media(max-width:600px){
+  .tabs{gap:2px}
+  .tab{flex:0 0 auto;white-space:nowrap;padding-left:15px;padding-right:15px}
+  .essay-grid{gap:12px}
+  .essay-card{display:block;min-height:0;overflow:visible}
+  .card-index{display:none}
+  .card-body{width:100%;min-width:0;padding:18px 16px 14px}
+  .card-badges,.badges{max-width:100%;align-items:flex-start}
+  .badge{max-width:100%;white-space:normal;line-height:1.25}
+  .essay-card h3{
+    display:block;
+    width:100%;
+    max-width:none;
+    max-height:none;
+    margin:15px 0 12px;
+    overflow:visible;
+    font-size:clamp(21px,6.2vw,25px);
+    line-height:1.24;
+    letter-spacing:-.015em;
+    white-space:normal;
+    word-break:normal;
+    overflow-wrap:break-word;
+    hyphens:auto;
+    -webkit-line-clamp:unset;
+  }
+  .stats{line-height:1.45}
+  .tags{margin-top:18px;padding-top:0}
+  .open-button{width:100%;margin-left:0;padding-left:0;text-align:left}
+}
+
+@media(max-width:380px){
+  .card-body{padding-left:14px;padding-right:14px}
+  .essay-card h3{font-size:21px}
+}
