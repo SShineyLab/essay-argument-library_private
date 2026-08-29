@@ -1,21 +1,22 @@
 "use strict";
 
 const ALL_TOPICS = "All topics";
-const ALL_STRUCTURES = "All structures";
+const ALL_STRUCTURES = "All essay types";
 const colourClass = {
   "Culture & Society":"category-coral","Economics & Development":"category-gold","Education & Technology":"category-blue",
   "Environment & Global Challenges":"category-green","Health & Social Issues":"category-rose","International Relations":"category-violet",
   "Media, Language & Communication":"category-cyan","Politics, Law & Governance":"category-ink"
 };
 
-const state = { essays:[], query:"", category:ALL_TOPICS, structure:ALL_STRUCTURES, view:"library" };
+const state = { essays:[], query:"", category:ALL_TOPICS, structure:ALL_STRUCTURES, view:"library", compareReady:false };
 const $ = (selector) => document.querySelector(selector);
 const esc = (value="") => String(value).replace(/[&<>'"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[ch]);
 const nfmt = value => Number(value).toLocaleString();
 const examplesCount = essay => essay.arguments.reduce((sum, argument) => sum + argument.examples.length, 0);
-const searchable = essay => [essay.title,essay.category,essay.essayType,...essay.tags,...essay.arguments.flatMap(a=>[a.name,a.summary,...a.examples]),...essay.quotes.flatMap(q=>[q.text,q.author])].join(" ").toLowerCase();
+const essayType = essay => essay.essayType === "Expository" ? "Expository (without however)" : "Argumentative (with however)";
+const searchable = essay => [essay.title,essay.category,essayType(essay),...essay.tags,...essay.arguments.flatMap(a=>[a.name,a.summary,...a.examples]),...essay.quotes.flatMap(q=>[q.text,q.author])].join(" ").toLowerCase();
 const sideClass = side => side === "Thesis" ? "side side-thesis" : side === "Antithesis" ? "side side-antithesis" : "side";
-const badge = essay => `<span class="badge ${colourClass[essay.category]||""}">${esc(essay.category)}</span><span class="badge">${esc(essay.essayType)}</span>`;
+const badge = essay => `<span class="badge ${colourClass[essay.category]||""}">${esc(essay.category)}</span><span class="badge">${esc(essayType(essay))}</span>`;
 
 function renderMetrics(){
   const totals = [
@@ -29,7 +30,8 @@ function renderMetrics(){
 
 function setupFilters(){
   const categories = [...new Set(state.essays.map(e=>e.category))].sort();
-  const structures = [...new Set(state.essays.map(e=>e.essayType))].sort();
+  const structures = [...new Set(state.essays.map(essayType))].sort();
+  $("#mobile-category").innerHTML = [ALL_TOPICS,...categories].map(x=>`<option value="${esc(x)}">${esc(x)}</option>`).join("");
   $("#structure").innerHTML = [ALL_STRUCTURES,...structures].map(x=>`<option>${esc(x)}</option>`).join("");
   $("#categories").innerHTML = [ALL_TOPICS,...categories].map(x=>{
     const count = x===ALL_TOPICS ? state.essays.length : state.essays.filter(e=>e.category===x).length;
@@ -39,11 +41,14 @@ function setupFilters(){
     const button=event.target.closest("button[data-category]"); if(!button)return;
     state.category=button.dataset.category; renderAll();
   });
+  $("#mobile-category").addEventListener("change", event=>{
+    state.category=event.target.value; renderAll();
+  });
 }
 
 function filteredEssays(){
   const q=state.query.trim().toLowerCase();
-  return state.essays.filter(e=>(!q||searchable(e).includes(q))&&(state.category===ALL_TOPICS||e.category===state.category)&&(state.structure===ALL_STRUCTURES||e.essayType===state.structure));
+  return state.essays.filter(e=>(!q||searchable(e).includes(q))&&(state.category===ALL_TOPICS||e.category===state.category)&&(state.structure===ALL_STRUCTURES||essayType(e)===state.structure));
 }
 
 function renderLibrary(){
@@ -53,7 +58,7 @@ function renderLibrary(){
   $("#result-count").textContent=`${items.length} ${items.length===1?"essay":"essays"}`;
   $("#essay-cards").innerHTML=items.length?items.map((e,i)=>{
     const thesis=e.arguments.filter(a=>a.side==="Thesis").length, anti=e.arguments.filter(a=>a.side==="Antithesis").length;
-    return `<article class="essay-card"><div class="card-index">${String(i+1).padStart(2,"0")}</div><div class="card-body"><div class="badges">${badge(e)}</div><h3>${esc(e.title)}</h3><div class="stats"><span>${e.arguments.length} arguments</span><span>${examplesCount(e)} examples</span><span>${e.quotes.length} quotes</span></div>${thesis||anti?`<div class="stance"><span><i class="thesis"></i>${thesis} thesis</span><span><i class="antithesis"></i>${anti} antithesis</span></div>`:""}<div class="tags">${e.tags.slice(0,4).map(t=>`<span>#${esc(t)}</span>`).join("")}</div><button class="open-button" data-open="${esc(e.id)}">Open contents →</button></div></article>`;
+    return `<article class="essay-card"><div class="card-index">${String(i+1).padStart(2,"0")}</div><div class="card-body"><div class="badges">${badge(e)}</div><h3 class="essay-title">${esc(e.title)}</h3><div class="stats"><span>${e.arguments.length} arguments</span><span>${examplesCount(e)} examples</span><span>${e.quotes.length} quotes</span></div>${thesis||anti?`<div class="stance"><span><i class="thesis"></i>${thesis} thesis</span><span><i class="antithesis"></i>${anti} antithesis</span></div>`:""}<div class="tags">${e.tags.slice(0,4).map(t=>`<span>#${esc(t)}</span>`).join("")}</div><button class="open-button" data-open="${esc(e.id)}">View essay <span aria-hidden="true">→</span></button></div></article>`;
   }).join(""):`<div class="empty"><h3>No matching essay</h3><p>Try another keyword or clear the current filters.</p></div>`;
 }
 
@@ -73,9 +78,17 @@ function comparisonColumn(essay,label){
 
 function renderCompare(){
   const selects=[$("#compare-a"),$("#compare-b")];
-  if(!selects[0].options.length){selects.forEach(s=>s.innerHTML=state.essays.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join("")); selects[1].selectedIndex=Math.min(1,state.essays.length-1);}
+  if(!selects[0].options.length){
+    const choices=`<option value="">Choose an essay…</option>`+state.essays.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join("");
+    selects.forEach(s=>s.innerHTML=choices);
+  }
   const a=state.essays.find(e=>e.id===selects[0].value), b=state.essays.find(e=>e.id===selects[1].value);
-  $("#comparison").innerHTML=a&&b?comparisonColumn(a,"Essay A")+comparisonColumn(b,"Essay B"):"";
+  const valid=a&&b&&a.id!==b.id;
+  $("#compare-action").disabled=!valid;
+  if(!a||!b){$("#comparison").innerHTML=`<div class="compare-empty"><strong>Choose two essays above</strong><p>The comparison will appear here after you press the button.</p></div>`;return;}
+  if(a.id===b.id){$("#comparison").innerHTML=`<div class="compare-empty"><strong>Choose two different essays</strong><p>This helps you spot useful similarities and differences.</p></div>`;return;}
+  if(!state.compareReady){$("#comparison").innerHTML=`<div class="compare-empty"><strong>Your essays are ready</strong><p>Tap “Compare essays” to continue.</p></div>`;return;}
+  $("#comparison").innerHTML=comparisonColumn(a,"First essay")+comparisonColumn(b,"Second essay");
 }
 
 function openEssay(id){
@@ -89,21 +102,26 @@ function setView(view){
   state.view=view;
   document.querySelectorAll(".tab").forEach(b=>{const active=b.dataset.view===view;b.classList.toggle("active",active);b.setAttribute("aria-selected",active);});
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`${view}-view`));
+  $(".controls").hidden=view==="compare";
+  $(".mobile-guide").hidden=view!=="library";
   if(view==="quotes")renderQuotes(); if(view==="compare")renderCompare();
 }
 
 function renderAll(){
   const has=state.query||state.category!==ALL_TOPICS||state.structure!==ALL_STRUCTURES; $("#clear").hidden=!has;
+  $("#mobile-category").value=state.category;
   renderLibrary(); renderQuotes(); if(state.view==="compare")renderCompare();
 }
 
 function bindEvents(){
   $("#search").addEventListener("input",e=>{state.query=e.target.value;renderAll()});
   $("#structure").addEventListener("change",e=>{state.structure=e.target.value;renderAll()});
-  $("#clear").addEventListener("click",()=>{state.query="";state.category=ALL_TOPICS;state.structure=ALL_STRUCTURES;$("#search").value="";$("#structure").value=ALL_STRUCTURES;renderAll()});
+  $("#clear").addEventListener("click",()=>{state.query="";state.category=ALL_TOPICS;state.structure=ALL_STRUCTURES;$("#search").value="";$("#mobile-category").value=ALL_TOPICS;$("#structure").value=ALL_STRUCTURES;renderAll()});
   $(".tabs").addEventListener("click",e=>{const b=e.target.closest("button[data-view]");if(b)setView(b.dataset.view)});
   document.body.addEventListener("click",e=>{const b=e.target.closest("[data-open]");if(b)openEssay(b.dataset.open)});
-  $("#compare-a").addEventListener("change",renderCompare); $("#compare-b").addEventListener("change",renderCompare);
+  $("#compare-a").addEventListener("change",()=>{state.compareReady=false;renderCompare()});
+  $("#compare-b").addEventListener("change",()=>{state.compareReady=false;renderCompare()});
+  $("#compare-action").addEventListener("click",()=>{state.compareReady=true;renderCompare()});
   $("#dialog-close").addEventListener("click",()=>$("#essay-dialog").close());
   $("#essay-dialog").addEventListener("click",e=>{if(e.target===$("#essay-dialog"))$("#essay-dialog").close()});
 }

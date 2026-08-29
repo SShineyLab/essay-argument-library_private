@@ -29,14 +29,17 @@
       </section>
 
       <nav class="tabs" aria-label="Library views">
-        <button class="tab active" data-view="library" aria-selected="true">Essay library</button>
-        <button class="tab" data-view="quotes" aria-selected="false">Quotations</button>
+        <button class="tab active" data-view="library" aria-selected="true">Essays</button>
+        <button class="tab" data-view="quotes" aria-selected="false">Quotes</button>
         <button class="tab" data-view="compare" aria-selected="false">Compare</button>
       </nav>
 
+      <p class="mobile-guide"><strong>Start here:</strong> search for a subject or choose a topic, then tap <em>View essay</em> to see its arguments and evidence.</p>
+
       <section class="controls" aria-label="Catalogue controls">
-        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search arguments, examples, countries, authors…" aria-label="Search essays, arguments, examples and quotations" /></label>
-        <select id="structure" aria-label="Filter by essay structure"><option>All structures</option></select>
+        <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Search essays, topics or examples…" aria-label="Search essays, arguments, examples and quotations" /></label>
+        <select id="mobile-category" aria-label="Filter essays by topic"><option>All topics</option></select>
+        <select id="structure" aria-label="Filter by essay type"><option>All essay types</option></select>
         <button id="clear" class="text-button" hidden>Clear</button>
       </section>
 
@@ -60,10 +63,20 @@
       </section>
 
       <section id="compare-view" class="view">
+        <div class="compare-intro">
+          <p class="eyebrow">Compare two essays</p>
+          <h2>See their ideas side by side</h2>
+          <p>Use this when you want to revise two related topics or find arguments that can work in more than one essay.</p>
+          <ol>
+            <li>Choose your first essay.</li>
+            <li>Choose a different second essay.</li>
+            <li>Tap <strong>Compare essays</strong> to see their arguments and quotes together.</li>
+          </ol>
+        </div>
         <div class="compare-controls">
-          <label>Essay A<select id="compare-a"></select></label>
-          <span aria-hidden="true">⇄</span>
-          <label>Essay B<select id="compare-b"></select></label>
+          <label><span class="step-number">1</span> First essay<select id="compare-a" aria-label="Choose the first essay"></select></label>
+          <label><span class="step-number">2</span> Second essay<select id="compare-b" aria-label="Choose the second essay"></select></label>
+          <button id="compare-action" class="compare-button" disabled>Compare essays</button>
         </div>
         <div id="comparison" class="comparison"></div>
       </section>
