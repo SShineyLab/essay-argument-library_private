@@ -4625,5 +4625,185 @@
       }
     ],
     "note": "Contents extracted from the submitted essay; examples and quotations have not been independently fact-checked."
+  },
+  {
+    "id": "discuss-with-examples-the-value-of-economic-sanctions-as-a-political-weapon",
+    "title": "Discuss with examples the value of economic sanctions as a political weapon.",
+    "category": "Politics, Law & Governance",
+    "essayType": "Expository",
+    "tags": [
+      "economic sanctions",
+      "political weapons",
+      "diplomacy",
+      "international relations"
+    ],
+    "sourceFile": "Discuss with examples the value of economic sanctions as a political weapon.docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "Yugoslavia",
+        "side": "Main argument",
+        "summary": "Economic sanctions are valuable political weapons because they convert economic dependence into pressure for political compliance. When a government relies upon international trade and finance, restricting these lifelines raises the cost of defiance and creates incentives for negotiation.",
+        "examples": [
+          "This was evident in Yugoslavia during the Bosnian War, when UN Resolution 757 in 1992 prohibited imports from Yugoslavia, restricted exports to it and froze economic dealings.",
+          "In 1995, Resolution 1022 suspended the sanctions conditionally, linking their continuation to the formal signing of the Peace Agreement and compliance with its provisions."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Cuba",
+        "side": "Main argument",
+        "summary": "Economic sanctions also possess political value when they are used to isolate a hostile regime from an influential economic power, restricting its ability to maintain normal international relations.",
+        "examples": [
+          "The United States adopted this strategy towards revolutionary Cuba, using its enormous regional market as a source of pressure.",
+          "The United States’ trade embargo, progressively established between 1960 and 1962, prohibited most exports to Cuba and restricted imports, sharply reducing Cuba’s economic relations with the United States. Washington subsequently encouraged wider diplomatic isolation through the Organisation of American States, whose members adopted measures in 1964 requiring the suspension of commercial relations with Cuba, with limited humanitarian exceptions."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "South Africa",
+        "side": "Main argument",
+        "summary": "Sanctions become powerful political weapons when they amplify domestic opposition and make an unpopular system costly to maintain. During the struggle against apartheid, international pressure attacked South Africa’s access to foreign capital, markets and investment, weakening the economic foundations of racial rule.",
+        "examples": [
+          "The United States’ Comprehensive Anti-Apartheid Act of 1986 prohibited new investment by US nationals, restricted imports of selected South African products, and prohibited loans and credit to the South African government and state-controlled entities.",
+          "As domestic resistance and international pressure intensified, Pretoria entered negotiations, leading to the ANC’s unbanning in February 1990 and formal negotiations to end apartheid."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "North Korea",
+        "side": "Main argument",
+        "summary": "Sanctions also operate as political weapons when they target the financial resources required to sustain a government’s strategic ambitions. North Korea’s nuclear development prompted the UN to restrict revenue sources and essential supplies rather than relying upon military confrontation.",
+        "examples": [
+          "Resolution 2371 in 2017 banned North Korean exports of coal, iron, iron ore, lead, lead ore and seafood.",
+          "Resolution 2397 limited crude-oil supplies to 4 million barrels, or 525,000 tonnes, per twelve-month period and refined petroleum products to 500,000 barrels per twelve-month period, targeting Pyongyang’s foreign-currency earnings and limiting its energy supplies."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "Russia",
+        "side": "Main argument",
+        "summary": "Modern sanctions demonstrate their political value by attacking the financial and technological foundations of military power. After Russia’s 2022 invasion of Ukraine, Western governments froze Russian Central Bank reserves, restricted major banks’ access to international finance and imposed export controls on advanced technology.",
+        "examples": [
+          "The European Union, G7 countries and their partners restricted maritime and other specified services for Russian seaborne oil sold above the applicable price cap, while allowing such services when the oil was sold at or below the cap.",
+          "These measures targeted both the funds sustaining Russia’s war effort and the imported technology required by its industries, turning economic networks into instruments of geopolitical pressure."
+        ]
+      },
+      {
+        "id": "a6",
+        "name": "Iran",
+        "side": "Main argument",
+        "summary": "Sanctions demonstrate their political value by making continued nuclear escalation economically costly while creating incentives for diplomatic concessions. Iran’s nuclear programme became the focus of increasingly severe restrictions on oil exports, banking and international finance, designed to deprive Tehran of revenue needed to sustain its policies.",
+        "examples": [
+          "On 28 August 2025, the United Kingdom, France and Germany invoked the UN “snapback” mechanism, citing Iran’s continued significant non-performance of its nuclear commitments.",
+          "Following the required procedure, previously lifted UN sanctions were reimposed on 27 September 2025, restoring restrictions relating to uranium enrichment, reprocessing, heavy-water activities and associated nuclear technology. By 2026, the European Union had also reimposed UN-based and autonomous nuclear-related economic and financial sanctions."
+        ]
+      },
+      {
+        "id": "a7",
+        "name": "Libya",
+        "side": "Main argument",
+        "summary": "Sanctions are also valuable when governments attach relief to clearly defined political demands, making compliance preferable to continued isolation.",
+        "examples": [
+          "Following the Lockerbie bombing and the destruction of UTA Flight 772, the United Nations imposed an arms embargo, air-transport restrictions and financial measures on Libya through Resolutions 748 (1992) and 883 (1993), demanding cooperation with the investigations.",
+          "In 1999, Libya surrendered two suspects for trial in the Netherlands under Scottish law, leading to the suspension of the UN sanctions. Further compliance followed in 2003, when Libya accepted responsibility for the actions of its officials, renounced terrorism and arranged compensation for the victims’ families, leading the Security Council to lift the remaining sanctions through Resolution 1506."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "A nation that is boycotted is a nation in sight of surrender. Apply this economic, peaceful, silent, deadly remedy, and there will be no need for force.",
+        "author": "Woodrow Wilson",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "Sanctions are not an end in themselves, but a means to an end.",
+        "author": "Ban Ki-moon",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Contents extracted from the submitted essay; examples and quotations have not been independently fact-checked."
+  },
+  {
+    "id": "alternatives-to-examinations",
+    "title": "Alternatives to examinations",
+    "category": "Education",
+    "essayType": "Balanced / However",
+    "tags": [
+      "examinations",
+      "assessment",
+      "education",
+      "vocational training"
+    ],
+    "sourceFile": "essay on alternatives to examinations.docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "Merit-Based Assessment",
+        "side": "Thesis",
+        "summary": "Merit-based assessment remains valuable because examinations provide a common standard through which students’ achievements are distinguished within competitive educational systems. Comparable conditions encourage learners to excel, while qualifications help universities and employers recognise academic ability.",
+        "examples": [
+          "Cambridge International A Levels provide standardised grades accepted by universities in many countries when selecting applicants.",
+          "In Mauritius, the School Certificate and Higher School Certificate similarly distinguish academic performance and help determine progression into tertiary institutions, allowing students to demonstrate achievement through nationally recognised qualifications."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Practical Examinations",
+        "side": "Thesis",
+        "summary": "Practical examinations offer a useful alternative to purely written assessment by testing whether students apply knowledge in realistic situations. Such assessment is especially important where competence depends upon performance rather than memorisation, since students must demonstrate what they could actually do.",
+        "examples": [
+          "Medical Objective Structured Clinical Examinations require candidates to demonstrate diagnosis, communication and patient-management skills through controlled clinical stations.",
+          "Cambridge IGCSE Physical Education assesses practical performance in a range of physical activities such as football, swimming and athletics, ensuring physical ability contributes substantially to the final qualification."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "Continuous Assessment",
+        "side": "Antithesis",
+        "summary": "However, continuous assessment provides a broader picture because students are evaluated across an extended period instead of during one high-pressure examination. Frequent assignments and mini-assessments encourage consistent learning, reveal gradual improvement and prevent one poor performance from determining an entire result.",
+        "examples": [
+          "The International Baccalaureate Extended Essay requires independent research, reflective engagement and supervision over an extended period.",
+          "Cambridge IGCSE Physical Education coursework similarly records practical performance during the course, enabling students to demonstrate consistency and development rather than relying upon a single final assessment at the end of the year."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "Closely Mentored Projects",
+        "side": "Antithesis",
+        "summary": "Closely mentored projects provide another alternative by assessing research, collaboration, problem-solving and creativity through the production of tangible work. Continuous teacher guidance allows educators to observe how students develop ideas, respond to criticism and refine their work, revealing skills examinations often overlook.",
+        "examples": [
+          "High Tech High schools in California use project-based learning involving authentic questions, critique, revision and public exhibitions of completed work.",
+          "The International Baccalaureate Extended Essay similarly requires students to undertake independent research under supervisor guidance, with reflection sessions assessing their development throughout the process."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "Vocational Training",
+        "side": "Antithesis",
+        "summary": "Vocational training offers an especially valuable alternative for students whose abilities are better demonstrated through practical work than conventional academic examinations. Learning within authentic workplaces allows assessment to focus on technical competence, reliability and problem-solving while connecting education directly with employment.",
+        "examples": [
+          "Germany’s dual vocational system combines vocational-school instruction with company-based training across more than 300 recognised occupations, giving apprentices experience alongside theory.",
+          "Switzerland follows a similar apprenticeship model, with around two-thirds of young people choosing vocational education after compulsory schooling, developing practical skills alongside theoretical knowledge."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "Education is the passport to the future, for tomorrow belongs to those who prepare for it today.",
+        "author": "Malcolm X",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "The most important assessment does not happen at the end of learning.",
+        "author": "Dylan Wiliam",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Contents extracted from the submitted essay; examples and quotations have not been independently fact-checked. The uploaded source did not state the essay question as a separate heading, so the database title is recorded as “Alternatives to examinations”."
   }
 ]
