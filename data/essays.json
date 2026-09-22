@@ -4805,5 +4805,115 @@
       }
     ],
     "note": "Contents extracted from the submitted essay; examples and quotations have not been independently fact-checked. The uploaded source did not state the essay question as a separate heading, so the database title is recorded as “Alternatives to examinations”."
+  },
+  {
+    "id": "religious-education-should-not-be-compulsory-in-schools",
+    "title": "Religious education should not be compulsory in schools",
+    "category": "Education",
+    "essayType": "Expository",
+    "tags": [
+      "religious education",
+      "school curriculum",
+      "morality",
+      "diversity"
+    ],
+    "sourceFile": "Essay on religious education.docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "Religion Should Be Taught at Home",
+        "side": "Main argument",
+        "summary": "Religious formation is primarily the family's responsibility, allowing parents to introduce faith gradually and personally according to their beliefs and traditions rather than making religious education a compulsory school requirement.",
+        "examples": [
+          "A Muslim family can teach children Islamic practices such as prayer and fasting according to its traditions.",
+          "Hindu parents can introduce their children to religious customs surrounding Diwali and other important observances within the family environment."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Schools Should Prioritise Universal Morality",
+        "side": "Main argument",
+        "summary": "Schools should prioritise moral and ethical principles that unite pupils regardless of religious background, providing a common foundation for social life.",
+        "examples": [
+          "Citizenship education teaches pupils about responsibility towards others, democratic participation and respect for laws.",
+          "History exposes pupils to the consequences of injustice and intolerance, such as the abolition of slavery and the struggle for civil rights, helping pupils develop moral judgement without relying upon a particular religion."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "Religious Teaching Can Encourage Division",
+        "side": "Main argument",
+        "summary": "Compulsory religious education can strengthen divisions between pupils by drawing attention to differences in belief before children are mature enough to understand them objectively.",
+        "examples": [
+          "Sectarian divisions between Catholic and Protestant communities in Northern Ireland demonstrate how religious identity can become deeply connected to social separation.",
+          "Tensions between religious communities in some parts of South Asia have shown how differences in faith, when combined with political and social divisions, can contribute to hostility rather than cooperation."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "Education Should Respect Non-Religious Families",
+        "side": "Main argument",
+        "summary": "A compulsory religious curriculum could disregard families who raise children according to secular principles while still teaching strong morality and ethics.",
+        "examples": [
+          "Humanist families often promote compassion, honesty and responsibility without grounding these values in religious belief.",
+          "In multicultural societies where Christianity, Islam, Hinduism, Buddhism and non-religious worldviews coexist, parents who follow different faiths could object to schools placing greater emphasis on one tradition than another."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "Citizenship and Relationships Education Are More Practical",
+        "side": "Main argument",
+        "summary": "School curricula should prioritise knowledge that directly prepares young people for the responsibilities and challenges of modern life, including citizenship and relationships education.",
+        "examples": [
+          "Citizenship education develops an understanding of democracy, rights, duties and participation, enabling pupils to become informed members of society.",
+          "Relationships and sexuality education provides practical knowledge concerning consent, personal responsibility, reproductive health and the prevention of teenage pregnancy."
+        ]
+      },
+      {
+        "id": "a6",
+        "name": "Schools Can Promote Multicultural Understanding Without Religious Instruction",
+        "side": "Main argument",
+        "summary": "Cultural awareness does not require formal religious education because schools can celebrate diversity through wider cultural activities while maintaining a neutral educational environment.",
+        "examples": [
+          "Multicultural events allow pupils to experience different traditions through food, music, clothing and festivals without requiring acceptance of their underlying religious beliefs.",
+          "Cultural days in schools give pupils from different backgrounds opportunities to share their heritage with classmates, while celebrations such as Diwali, Eid or Christmas can be studied within a wider cultural context."
+        ]
+      },
+      {
+        "id": "a7",
+        "name": "Moral Reasoning Should Replace Religious Instruction",
+        "side": "Main argument",
+        "summary": "Teaching pupils to reason morally can be more valuable than expecting them to follow particular religious commandments, because ethical understanding requires thought, empathy and consideration of consequences.",
+        "examples": [
+          "Philosophy and social studies encourage pupils to examine complex questions such as justice, equality and responsibility from several perspectives.",
+          "The study of Immanuel Kant introduces pupils to moral principles based upon reason and duty rather than adherence to one faith."
+        ]
+      },
+      {
+        "id": "a8",
+        "name": "Religious Instruction Can Produce Harmful Consequences",
+        "side": "Main argument",
+        "summary": "Religious instruction becomes particularly problematic when beliefs are presented dogmatically, since pupils could adopt attitudes towards other communities without fully understanding their differences.",
+        "examples": [
+          "Throughout history, religious intolerance contributed to prolonged conflicts such as the European wars of religion, causing extensive political and social disruption and large-scale violence.",
+          "In more recent times, extremist groups have manipulated religious ideas to justify discrimination and terrorism, demonstrating how powerful beliefs could be exploited when critical thinking is absent."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "If religion did not exist, it would be necessary to invent one.",
+        "author": "Voltaire",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "Education is the most powerful weapon which you can use to change the world.",
+        "author": "Nelson Mandela",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Contents extracted from the submitted essay; examples and quotations have not been independently fact-checked."
   }
 ]
