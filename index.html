@@ -32,6 +32,7 @@
         <button class="tab active" data-view="library" aria-selected="true">Essays</button>
         <button class="tab" data-view="quotes" aria-selected="false">Quotes</button>
         <button class="tab" data-view="compare" aria-selected="false">Compare</button>
+        <button class="tab" data-view="definitions" aria-selected="false">Definitions</button>
       </nav>
 
       <p class="mobile-guide"><strong>Start here:</strong> search for a subject or choose a topic, then tap <em>View essay</em> to see its arguments and evidence.</p>
@@ -79,6 +80,12 @@
           <button id="compare-action" class="compare-button" disabled>Compare essays</button>
         </div>
         <div id="comparison" class="comparison"></div>
+      </section>
+
+      <section id="definitions-view" class="view">
+        <div class="section-heading"><div><p class="eyebrow">GP glossary</p><h2 id="definition-count">Definitions</h2></div><small>Key terms for essay introductions and arguments</small></div>
+        <p class="glossary-intro">Search a term or browse by topic. Definitions are short, revision-friendly explanations.</p>
+        <div id="definition-grid" class="definition-grid"></div>
       </section>
     </main>
 
