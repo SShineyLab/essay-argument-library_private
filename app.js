@@ -8,7 +8,33 @@ const colourClass = {
   "Media, Language & Communication":"category-cyan","Politics, Law & Governance":"category-ink"
 };
 
+const COMPARE_THEMES = [{"name":"Education and skills","keywords":["education","school","university","student","learning","literacy","curriculum","qualification","training","academic","vocational","teacher"]},{"name":"Housing and living conditions","keywords":["housing","household","home ownership","homeless","accommodation","residential","living conditions","shelter"]},{"name":"Healthcare and wellbeing","keywords":["health","medical","hospital","disease","treatment","vaccination","medicine","patient","wellbeing","well-being"]},{"name":"Poverty and inequality","keywords":["poverty","poor families","low-income","inequality","deprivation","disadvantaged","wealth gap","social mobility"]},{"name":"Employment and human capital","keywords":["employment","jobs","workforce","labour","labor","wages","pay","productivity","human capital","brain drain","skilled workers"]},{"name":"Public finance and welfare","keywords":["tax","public expenditure","government spending","funding","welfare","budget","public finances","subsid","fiscal"]},{"name":"Culture and identity","keywords":["culture","tradition","heritage","language","religion","identity","custom","ceremon"]},{"name":"Governance and rights","keywords":["governance","corruption","democra","rights","law","justice","government","accountability","politic","representation"]},{"name":"Environment and sustainability","keywords":["environment","climate","pollution","wildlife","conservation","sustainab","natural resources"]},{"name":"Technology and innovation","keywords":["technology","internet","research","innovation","artificial intelligence","digital","computer","social media"]},{"name":"Migration and international relations","keywords":["migration","immigration","refugee","international","foreign","globalisation","trade","sanction","diplomacy"]},{"name":"Crime and security","keywords":["crime","criminal","drug trafficking","terrorism","security","police","prison","violence"]}];
+
 const definitions = [
+{"term":"Education","definition":"The process through which people acquire knowledge, skills, values and understanding.","category":"Education"},
+{"term":"University education","definition":"Advanced study, research and specialised training undertaken at institutions of higher education.","category":"Education"},
+{"term":"Poverty","definition":"A condition in which people lack sufficient resources to meet basic needs and participate adequately in society.","category":"Economics & Development"},
+{"term":"Housing","definition":"The provision of accommodation that offers people shelter, security and suitable living conditions.","category":"Economics & Development"},
+{"term":"Medical care","definition":"Services aimed at preventing, diagnosing and treating illness to improve health and quality of life.","category":"Health & Society"},
+{"term":"Culture","definition":"The shared beliefs, customs, language, arts and ways of life of a community or society.","category":"Culture & Society"},
+{"term":"Tradition","definition":"A belief, practice or custom transmitted from one generation to another.","category":"Culture & Society"},
+{"term":"Industrialisation","definition":"The expansion of manufacturing and mechanised production as an economy develops.","category":"Economics & Development"},
+{"term":"Immigration","definition":"The movement of people into another country to live there temporarily or permanently.","category":"International Relations"},
+{"term":"National unity","definition":"A sense of solidarity and shared belonging among the people of a nation.","category":"Culture & Society"},
+{"term":"Rule of law","definition":"The principle that everyone, including public authorities, is subject to publicly established and fairly applied laws.","category":"Politics, Law & Governance"},
+{"term":"Globalisation","definition":"The growing interconnectedness of economies, societies and cultures across national borders.","category":"International Relations"},
+{"term":"Economic cooperation","definition":"Joint economic action between countries or institutions to pursue shared development and trade objectives.","category":"Economics & Development"},
+{"term":"Human migration","definition":"The movement of people from one place to another, within or across national borders.","category":"International Relations"},
+{"term":"Capital punishment","definition":"A criminal penalty in which the state imposes a death sentence for an offence.","category":"Politics, Law & Governance"},
+{"term":"Referendum","definition":"A direct public vote on a particular political or constitutional question.","category":"Politics, Law & Governance"},
+{"term":"Examination","definition":"A formal assessment used to measure a learner's knowledge, understanding or skills.","category":"Education"},
+{"term":"Religious education","definition":"Teaching about religious beliefs, practices and traditions, whether as a subject of study or faith instruction.","category":"Education"},
+{"term":"Dangerous drugs","definition":"Substances whose use can cause serious physical, psychological or social harm.","category":"Health & Society"},
+{"term":"Music","definition":"The art of organising sound through elements such as rhythm, melody and harmony.","category":"Culture & Society"},
+{"term":"Ceremony","definition":"A formal occasion or series of acts performed to mark an important event, belief or achievement.","category":"Culture & Society"},
+{"term":"Journalism","definition":"The practice of gathering, verifying and reporting information of public interest.","category":"Media, Language & Communication"},
+{"term":"Social cohesion","definition":"The trust, solidarity and sense of belonging that connect members of a society.","category":"Culture & Society"},
+{"term":"Economic development","definition":"The process of improving a society's economic opportunities, productivity and living standards.","category":"Economics & Development"},
 {"term":"Globalisation","definition":"The increasing interconnectedness and interdependence of countries through trade, technology, migration and cultural exchange.","category":"Culture & Society"},
 {"term":"Human capital","definition":"The knowledge, skills, experience and health of people that contribute to their productivity and economic potential.","category":"Education"},
 {"term":"Social mobility","definition":"The movement of individuals or groups between different social or economic positions, often through education or employment.","category":"Education"},
@@ -104,19 +130,37 @@ function comparisonColumn(essay,label){
   return `<section class="compare-column"><header class="compare-head"><p class="eyebrow">${label}</p><h3>${esc(essay.title)}</h3><div class="badges">${badge(essay)}</div></header><div class="compare-list">${essay.arguments.map((a,i)=>`<article class="compare-argument"><span>${String(i+1).padStart(2,"0")}</span><div><span class="${sideClass(a.side)}">${esc(a.side)}</span><h4>${esc(a.name)}</h4><p>${a.examples.length} extracted examples</p></div></article>`).join("")}</div><div class="compare-quotes"><p class="eyebrow">Quotations</p>${essay.quotes.length?essay.quotes.map(q=>`<blockquote>“${esc(q.text)}” <small>— ${esc(q.author)}</small></blockquote>`).join(""):`<p class="note">No attributed quotation identified.</p>`}</div></section>`;
 }
 
+function themeMatches(argument,theme){
+  const text=[argument.name,argument.summary].join(" ").toLowerCase();
+  return theme.keywords.some(k=>text.includes(k));
+}
+function sharedThemes(a,b){
+  return COMPARE_THEMES.map(theme=>({
+    name:theme.name,
+    left:a.arguments.map((argument,index)=>({argument,index})).filter(x=>themeMatches(x.argument,theme)),
+    right:b.arguments.map((argument,index)=>({argument,index})).filter(x=>themeMatches(x.argument,theme))
+  })).filter(group=>group.left.length&&group.right.length);
+}
 function renderCompare(){
   const selects=[$("#compare-a"),$("#compare-b")];
   if(!selects[0].options.length){
-    const choices=`<option value="">Choose an essay…</option>`+state.essays.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join("");
+    const choices='<option value="">Choose an essay…</option>'+state.essays.map(e=>`<option value="${esc(e.id)}">${esc(e.title)}</option>`).join("");
     selects.forEach(s=>s.innerHTML=choices);
   }
-  const a=state.essays.find(e=>e.id===selects[0].value), b=state.essays.find(e=>e.id===selects[1].value);
-  const valid=a&&b&&a.id!==b.id;
-  $("#compare-action").disabled=!valid;
-  if(!a||!b){$("#comparison").innerHTML=`<div class="compare-empty"><strong>Choose two essays above</strong><p>The comparison will appear here after you press the button.</p></div>`;return;}
-  if(a.id===b.id){$("#comparison").innerHTML=`<div class="compare-empty"><strong>Choose two different essays</strong><p>This helps you spot useful similarities and differences.</p></div>`;return;}
-  if(!state.compareReady){$("#comparison").innerHTML=`<div class="compare-empty"><strong>Your essays are ready</strong><p>Tap “Compare essays” to continue.</p></div>`;return;}
-  $("#comparison").innerHTML=comparisonColumn(a,"First essay")+comparisonColumn(b,"Second essay");
+  const a=state.essays.find(e=>e.id===selects[0].value),b=state.essays.find(e=>e.id===selects[1].value);
+  $("#compare-action").disabled=!(a&&b&&a.id!==b.id);
+  if(!a||!b||a.id===b.id){$("#comparison").innerHTML='<div class="compare-empty"><strong>Choose two different essays</strong><p>Select the titles above to find shared paragraph themes.</p></div>';return;}
+  if(!state.compareReady){$("#comparison").innerHTML='<div class="compare-empty"><strong>Your essays are ready</strong><p>Tap “Compare essays” to discover their shared themes.</p></div>';return;}
+  const groups=sharedThemes(a,b);
+  $("#comparison").innerHTML=groups.length?'<div class="theme-overview"><p class="eyebrow">Shared themes</p><h3>'+groups.length+' themes found</h3><p>These matches use paragraph titles and explanations. Open any theme to compare the original arguments and examples.</p></div>'+groups.map((g,i)=>`<button class="theme-card" data-theme="${i}"><span class="eyebrow">Shared theme</span><strong>${esc(g.name)}</strong><span>${g.left.length} paragraph(s) in the first essay · ${g.right.length} in the second</span><em>View explanations and examples →</em></button>`).join(""):'<div class="compare-empty"><strong>No shared themes identified automatically</strong><p>The essays may still share ideas expressed in different language. Try another pair.</p></div>';
+}
+function openTheme(index){
+  const a=state.essays.find(e=>e.id===$("#compare-a").value),b=state.essays.find(e=>e.id===$("#compare-b").value);
+  if(!a||!b)return;
+  const group=sharedThemes(a,b)[index];if(!group)return;
+  const column=(essay,items,label)=>`<section class="theme-column"><p class="eyebrow">${label}</p><h3>${esc(essay.title)}</h3>${items.map(x=>`<article class="theme-argument"><span class="${sideClass(x.argument.side)}">${esc(x.argument.side)}</span><h4>Paragraph ${x.index+1}: ${esc(x.argument.name)}</h4><p>${esc(x.argument.summary)}</p><div class="theme-examples">${x.argument.examples.map((example,i)=>`<div class="example"><strong>Example ${i+1}</strong><p>${esc(example)}</p></div>`).join("")}</div></article>`).join("")}</section>`;
+  $("#theme-dialog-content").innerHTML=`<header class="detail-head"><p class="eyebrow">Theme comparison</p><h2 id="theme-dialog-title">${esc(group.name)}</h2><p>Matching arguments from both essays, with their explanations and all stored examples.</p></header><div class="theme-detail">${column(a,group.left,"First essay")}${column(b,group.right,"Second essay")}</div>`;
+  $("#theme-dialog").showModal();
 }
 
 function openEssay(id){
@@ -152,6 +196,9 @@ function bindEvents(){
   $("#compare-a").addEventListener("change",()=>{state.compareReady=false;renderCompare()});
   $("#compare-b").addEventListener("change",()=>{state.compareReady=false;renderCompare()});
   $("#compare-action").addEventListener("click",()=>{state.compareReady=true;renderCompare()});
+  $("#comparison").addEventListener("click",event=>{const card=event.target.closest("[data-theme]");if(card)openTheme(Number(card.dataset.theme))});
+  $("#theme-dialog-close").addEventListener("click",()=>$("#theme-dialog").close());
+  $("#theme-dialog").addEventListener("click",event=>{if(event.target===$("#theme-dialog"))$("#theme-dialog").close()});
   $("#dialog-close").addEventListener("click",()=>$("#essay-dialog").close());
   $("#essay-dialog").addEventListener("click",e=>{if(e.target===$("#essay-dialog"))$("#essay-dialog").close()});
 }
