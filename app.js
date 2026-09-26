@@ -8,6 +8,27 @@ const colourClass = {
   "Media, Language & Communication":"category-cyan","Politics, Law & Governance":"category-ink"
 };
 
+const definitions = [
+{"term":"Globalisation","definition":"The increasing interconnectedness and interdependence of countries through trade, technology, migration and cultural exchange.","category":"Culture & Society"},
+{"term":"Human capital","definition":"The knowledge, skills, experience and health of people that contribute to their productivity and economic potential.","category":"Education"},
+{"term":"Social mobility","definition":"The movement of individuals or groups between different social or economic positions, often through education or employment.","category":"Education"},
+{"term":"Universal healthcare","definition":"A system in which all people can access the health services they need without suffering financial hardship.","category":"Health & Society"},
+{"term":"Preventive healthcare","definition":"Medical services and public-health measures designed to prevent disease or detect it early, including vaccination and screening.","category":"Health & Society"},
+{"term":"Brain drain","definition":"The emigration of skilled or highly educated people from their home country, often in search of better opportunities.","category":"Education"},
+{"term":"Democratisation of education","definition":"The process of making educational opportunities more accessible and equitable, regardless of income or social background.","category":"Education"},
+{"term":"Economic sanctions","definition":"Restrictions on trade, finance or other economic activity imposed to influence the behaviour of a country, organisation or individual.","category":"Politics, Law & Governance"},
+{"term":"Cultural heritage","definition":"The traditions, languages, practices, monuments and other inherited expressions that communities preserve across generations.","category":"Culture & Society"},
+{"term":"Social cohesion","definition":"The degree of trust, solidarity and sense of belonging among members of a society.","category":"Culture & Society"},
+{"term":"Sustainable development","definition":"Development that meets present needs without compromising the ability of future generations to meet their own needs.","category":"Economics & Development"},
+{"term":"Opportunity cost","definition":"The value of the next-best alternative forgone when resources are used for a particular purpose.","category":"Economics & Development"},
+{"term":"Public expenditure","definition":"Spending by government on services, infrastructure, administration and other public responsibilities.","category":"Economics & Development"},
+{"term":"International cooperation","definition":"Joint action by countries and international organisations to address shared problems and pursue common objectives.","category":"International Relations"},
+{"term":"Sovereignty","definition":"The authority of a state to govern its own territory and affairs without external control.","category":"International Relations"},
+{"term":"Social justice","definition":"The principle of fair access to rights, opportunities and resources across society.","category":"Health & Society"},
+{"term":"Industrialisation","definition":"The transformation of an economy through the growth of manufacturing, mechanisation and industrial production.","category":"Economics & Development"},
+{"term":"Rehabilitation","definition":"Support and treatment intended to help people recover functioning and reintegrate into everyday social or working life.","category":"Health & Society"}
+];
+
 const state = { essays:[], query:"", category:ALL_TOPICS, structure:ALL_STRUCTURES, view:"library", compareReady:false };
 const $ = (selector) => document.querySelector(selector);
 const esc = (value="") => String(value).replace(/[&<>'"]/g, ch => ({"&":"&amp;","<":"&lt;",">":"&gt;","'":"&#39;",'"':"&quot;"})[ch]);
@@ -72,6 +93,13 @@ function renderQuotes(){
   $("#quote-grid").innerHTML=quotes.length?quotes.map(q=>`<button class="quote-card" data-open="${esc(q.essayId)}"><span class="eyebrow">Quotation</span><blockquote>“${esc(q.text)}”</blockquote><strong>${esc(q.author)}</strong><small>${esc(q.location)} · ${esc(q.essayTitle)}</small></button>`).join(""):`<div class="empty"><h3>No matching quotation</h3><p>Try another keyword or topic.</p></div>`;
 }
 
+function renderDefinitions(){
+  const q=state.query.trim().toLowerCase();
+  const terms=definitions.filter(d=>(state.category===ALL_TOPICS||d.category===state.category)&&(!q||`${d.term} ${d.definition} ${d.category}`.toLowerCase().includes(q)));
+  $("#definition-count").textContent=`${terms.length} ${terms.length===1?"definition":"definitions"}`;
+  $("#definition-grid").innerHTML=terms.length?terms.map(d=>`<article class="definition-card"><span class="eyebrow">${esc(d.category)}</span><h3>${esc(d.term)}</h3><p>${esc(d.definition)}</p></article>`).join(""):`<div class="empty"><h3>No matching definition</h3><p>Try another term or clear the filters.</p></div>`;
+}
+
 function comparisonColumn(essay,label){
   return `<section class="compare-column"><header class="compare-head"><p class="eyebrow">${label}</p><h3>${esc(essay.title)}</h3><div class="badges">${badge(essay)}</div></header><div class="compare-list">${essay.arguments.map((a,i)=>`<article class="compare-argument"><span>${String(i+1).padStart(2,"0")}</span><div><span class="${sideClass(a.side)}">${esc(a.side)}</span><h4>${esc(a.name)}</h4><p>${a.examples.length} extracted examples</p></div></article>`).join("")}</div><div class="compare-quotes"><p class="eyebrow">Quotations</p>${essay.quotes.length?essay.quotes.map(q=>`<blockquote>“${esc(q.text)}” <small>— ${esc(q.author)}</small></blockquote>`).join(""):`<p class="note">No attributed quotation identified.</p>`}</div></section>`;
 }
@@ -103,14 +131,16 @@ function setView(view){
   document.querySelectorAll(".tab").forEach(b=>{const active=b.dataset.view===view;b.classList.toggle("active",active);b.setAttribute("aria-selected",active);});
   document.querySelectorAll(".view").forEach(v=>v.classList.toggle("active",v.id===`${view}-view`));
   $(".controls").hidden=view==="compare";
+  $("#structure").hidden=view==="definitions";
+  $("#search").placeholder=view==="definitions"?"Search terms or definitions…":"Search essays, topics or examples…";
   $(".mobile-guide").hidden=view!=="library";
-  if(view==="quotes")renderQuotes(); if(view==="compare")renderCompare();
+  if(view==="quotes")renderQuotes(); if(view==="compare")renderCompare(); if(view==="definitions")renderDefinitions();
 }
 
 function renderAll(){
   const has=state.query||state.category!==ALL_TOPICS||state.structure!==ALL_STRUCTURES; $("#clear").hidden=!has;
   $("#mobile-category").value=state.category;
-  renderLibrary(); renderQuotes(); if(state.view==="compare")renderCompare();
+  renderLibrary(); renderQuotes(); renderDefinitions(); if(state.view==="compare")renderCompare();
 }
 
 function bindEvents(){
