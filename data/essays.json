@@ -5058,5 +5058,225 @@
       }
     ],
     "note": "Contents extracted from the submitted essay; examples and quotations have not been independently fact-checked."
+  },
+  {
+    "id": "should-university-education-be-free-for-all",
+    "title": "Should university education be free for all?",
+    "category": "Education",
+    "essayType": "Balanced / However",
+    "tags": [
+      "university education",
+      "free tuition",
+      "higher education",
+      "human capital"
+    ],
+    "sourceFile": "Absolutely.docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "The Democratisation of Education",
+        "side": "Thesis",
+        "summary": "Free tuition removes financial barriers for capable students.",
+        "examples": [
+          "Finland charges no public-university tuition for Finnish, EU and EEA students.",
+          "Scotland funds tuition for eligible Scottish-domiciled undergraduates through SAAS."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Human Resource and Capacity Building",
+        "side": "Thesis",
+        "summary": "University access builds specialised expertise and economic productivity.",
+        "examples": [
+          "Education and skills investment contributed to South Korea's economic transformation.",
+          "Singapore made education and training central to human-capital development."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "Universities as Centres of Research",
+        "side": "Thesis",
+        "summary": "Access enables more students to enter research and innovation.",
+        "examples": [
+          "Oxford University research contributed to the Oxford-AstraZeneca COVID-19 vaccine.",
+          "MIT laboratories advance medicine, computing and engineering while training researchers."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "Higher Standards of Living",
+        "side": "Thesis",
+        "summary": "Degrees can increase earnings and employment prospects.",
+        "examples": [
+          "Across OECD countries, bachelor's-degree holders earn on average 42% more than upper-secondary graduates.",
+          "South African tertiary qualifications are linked to substantial earnings advantages."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "Preventing Brain Drain",
+        "side": "Thesis",
+        "summary": "Accessible local degrees reduce the financial need to study abroad.",
+        "examples": [
+          "Mauritius introduced free public-tertiary tuition in 2019 for first certificates, diplomas and undergraduate degrees.",
+          "Most German public higher-education institutions charge no tuition."
+        ]
+      },
+      {
+        "id": "a6",
+        "name": "However, the Cost to Taxpayers",
+        "side": "Antithesis",
+        "summary": "Free tuition creates public expenditure and opportunity costs.",
+        "examples": [
+          "Mauritius provided Rs1.8 billion to institutions for 33,562 students under its Free Tertiary Education Scheme by June 2022.",
+          "South Africa's NSFAS faced a R10.06 billion funding shortfall in 2025."
+        ]
+      },
+      {
+        "id": "a7",
+        "name": "Quality of Education",
+        "side": "Antithesis",
+        "summary": "Growing enrolment without adequate funding can undermine university resources.",
+        "examples": [
+          "The University of Buenos Aires faced operating-budget pressures during Argentina's 2024 crisis.",
+          "Private institutions educate more than 70% of Brazil's undergraduates within formal quality-assurance systems."
+        ]
+      },
+      {
+        "id": "a8",
+        "name": "Accountability and Institutional Standards",
+        "side": "Antithesis",
+        "summary": "The essay argues that tuition-free institutions may face weaker direct pressure from fee-paying students.",
+        "examples": [
+          "Private US universities use student evaluations and accreditation to monitor teaching quality.",
+          "Singapore's EduTrust framework sets standards for private education institutions."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "The roots of study are bitter, but the fruit is sweet.",
+        "author": "Cato the Elder",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "An investment in knowledge always pays the best interest.",
+        "author": "Benjamin Franklin",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Extracted from submitted essay; source has no explicit question heading and skips paragraph number 4. Examples and quotes not independently fact-checked."
+  },
+  {
+    "id": "medical-care-a-fundamental-right-of-all-citizens",
+    "title": "To what extent do you agree that medical care is a fundamental right of all citizens? Illustrate your answer.",
+    "category": "Health & Society",
+    "essayType": "Balanced / However",
+    "tags": [
+      "medical care",
+      "universal healthcare",
+      "human rights",
+      "public funding"
+    ],
+    "sourceFile": "To what extent do you agree that medical care is a fundamental right of all citizens(1).docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "Universal Healthcare Promotes Equality and Social Justice",
+        "side": "Thesis",
+        "summary": "Medical need rather than income should determine access.",
+        "examples": [
+          "The UK NHS has provided care free at the point of use since 1948.",
+          "Canada's Medicare covers medically necessary hospital and physician services without direct payment at point of care."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Universal Healthcare Protects Vulnerable Groups",
+        "side": "Thesis",
+        "summary": "Removing financial barriers helps children, elderly citizens and low-income families.",
+        "examples": [
+          "Sweden offers comprehensive healthcare with heavily subsidised services for children and elderly citizens.",
+          "Mauritius offers free consultations, medicines and emergency care at public hospitals and clinics."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "National Healthcare Systems Improve Quality and Public Confidence",
+        "side": "Thesis",
+        "summary": "National regulation can strengthen standards, patient safety and accountability.",
+        "examples": [
+          "Singapore's Ministry of Health regulates hospitals, licensing and healthcare quality.",
+          "Norway combines universal healthcare with national regulation and trained medical staff."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "Preventive Healthcare Benefits Society and the Economy",
+        "side": "Thesis",
+        "summary": "Vaccination and screening reduce severe illness, costs and absenteeism.",
+        "examples": [
+          "Australia's National Immunisation Programme provides free vaccines.",
+          "The UK's school HPV vaccination programme reduced cervical cancer and precancerous conditions."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "However, Free Healthcare Is Not Entirely Free",
+        "side": "Antithesis",
+        "summary": "Universal care is funded by taxation and competes with other public priorities.",
+        "examples": [
+          "The UK NHS is financed primarily through taxation and National Insurance.",
+          "Denmark funds universal healthcare largely through taxation."
+        ]
+      },
+      {
+        "id": "a6",
+        "name": "Limited Resources Require Sustainable Healthcare Policies",
+        "side": "Antithesis",
+        "summary": "Finite resources lead to eligibility limits for visitors and non-residents.",
+        "examples": [
+          "Australia's Medicare principally covers citizens and eligible permanent residents.",
+          "Singapore generally requires foreign visitors to pay unless specific agreements apply."
+        ]
+      },
+      {
+        "id": "a7",
+        "name": "Individual Responsibility for Personal Health",
+        "side": "Antithesis",
+        "summary": "The essay argues that preventable risks increase shared healthcare costs.",
+        "examples": [
+          "The essay cites WHO figures exceeding eight million annual deaths from tobacco use.",
+          "The UK spends billions treating obesity-associated conditions."
+        ]
+      },
+      {
+        "id": "a8",
+        "name": "Misuse and Waste of Public Healthcare Resources",
+        "side": "Antithesis",
+        "summary": "Poor procurement and management divert scarce healthcare resources.",
+        "examples": [
+          "Mauritius has reported destruction of expired medicines purchased for public healthcare.",
+          "Countries reported losses from unused protective equipment and surplus supplies during COVID-19."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "We must ensure that treatment is made available to those who need it, most especially to those who cannot afford it.",
+        "author": "Nelson Mandela",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "Health is a human right, not a privilege.",
+        "author": "Ban Ki-moon",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Extracted from submitted essay; examples and quotes not independently fact-checked."
   }
 ]
