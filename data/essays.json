@@ -5278,5 +5278,247 @@
       }
     ],
     "note": "Extracted from submitted essay; examples and quotes not independently fact-checked."
+  },
+  {
+    "id": "are-there-alternatives-to-prison",
+    "title": "Are there alternatives to prison?",
+    "category": "Politics, Law & Governance",
+    "essayType": "Balanced / However",
+    "tags": [
+      "prison",
+      "criminal justice",
+      "rehabilitation",
+      "restorative justice",
+      "public safety"
+    ],
+    "sourceFile": "essay on prison.docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "Social problems and welfare reform",
+        "side": "Thesis",
+        "summary": "Poverty, unstable housing and insufficient welfare can contribute to offending; social protection addresses underlying causes before punishment becomes necessary.",
+        "examples": [
+          "The essay cites US welfare programmes such as SNAP as helping families escape severe deprivation.",
+          "It cites Scandinavian social protection as reducing offending through greater dignity and opportunity."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Drug addiction and rehabilitation",
+        "side": "Thesis",
+        "summary": "Treatment and counselling can address dependency and reduce repeat offending more constructively than prison alone.",
+        "examples": [
+          "Portugal's 2001 drug policy reform prioritised treatment and counselling over imprisoning users.",
+          "Switzerland's supervised treatment programmes are presented as reducing heroin dependency and improving recovery."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "Unemployment and curriculum reform",
+        "side": "Thesis",
+        "summary": "Skills-based education can improve young people's employment prospects and reduce incentives for offending.",
+        "examples": [
+          "Germany's vocational education system equips school leavers with practical skills.",
+          "Singapore's technical institutes prepare young people for stable employment."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "Mental illness and specialised care",
+        "side": "Thesis",
+        "summary": "Specialised psychiatric treatment can address the needs of offenders with mental illness while protecting the community.",
+        "examples": [
+          "The United Kingdom uses secure mental-health hospitals for some offenders.",
+          "Canada's forensic psychiatric services provide clinical supervision as an alternative to prison for some offenders."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "Community service for first-time offenders",
+        "side": "Thesis",
+        "summary": "Community service can hold minor, non-violent first-time offenders accountable without exposing them to prison environments.",
+        "examples": [
+          "New Zealand uses community-based sentences involving contributions to local projects.",
+          "The United Kingdom uses unpaid work orders as a structured alternative to imprisonment."
+        ]
+      },
+      {
+        "id": "a6",
+        "name": "Restorative justice",
+        "side": "Thesis",
+        "summary": "Restorative justice seeks to repair harm through dialogue, accountability and reintegration of victims, offenders and communities.",
+        "examples": [
+          "New Zealand's Family Group Conferences under the 1989 Children, Young Persons and Their Families Act divert some youths from formal courts.",
+          "Rwanda's Gacaca courts after the 1994 genocide combined truth-telling, local sentencing and reconciliation."
+        ]
+      },
+      {
+        "id": "a7",
+        "name": "Criminal Justice Reform in the USA",
+        "side": "Thesis",
+        "summary": "Reforms to mandatory sentencing and probation aim to reduce overreliance on incarceration and reoffending.",
+        "examples": [
+          "The US First Step Act of 2018 introduced education and early-release incentives.",
+          "Several US states have expanded probation to divert low-risk offenders from incarceration."
+        ]
+      },
+      {
+        "id": "a8",
+        "name": "However, severe crimes and cases with no alternative",
+        "side": "Antithesis",
+        "summary": "The essay argues that some grave offences require confinement to protect the public, and discusses capital punishment in certain jurisdictions.",
+        "examples": [
+          "Timothy McVeigh was executed in the United States after the Oklahoma City bombing.",
+          "Singapore retains capital sentencing for certain major drug-trafficking offences."
+        ]
+      },
+      {
+        "id": "a9",
+        "name": "Taxpayers and the state's responsibility",
+        "side": "Antithesis",
+        "summary": "The essay argues that the state must use detention when necessary to protect the public from dangerous or repeat offenders.",
+        "examples": [
+          "France is cited for lifelong imprisonment of serious repeat offenders.",
+          "Japan is cited for strict sentencing intended to protect public safety."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "No one truly knows a nation until one has been inside its jails.",
+        "author": "Nelson Mandela",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "The degree of civilisation in a society is revealed by entering its prisons.",
+        "author": "Fyodor Dostoevsky",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Extracted from essay on prison.docx. The source's question/title was not stated explicitly; this title describes its subject. Source labels paragraph 6 twice (original and revised); the revised restorative-justice paragraph was used. Examples and quotation attributions have not been independently fact-checked."
+  },
+  {
+    "id": "impact-of-an-ageing-population",
+    "title": "The impact of an ageing population",
+    "category": "Health & Social Issues",
+    "essayType": "Balanced / However",
+    "tags": [
+      "ageing population",
+      "demography",
+      "pensions",
+      "healthcare",
+      "immigration"
+    ],
+    "sourceFile": "essay on ageing population.docx",
+    "arguments": [
+      {
+        "id": "a1",
+        "name": "Negative impact on the economy",
+        "side": "Thesis",
+        "summary": "A smaller working-age population can create labour shortages, reduce productivity and slow growth.",
+        "examples": [
+          "Japan's shrinking workforce is presented as constraining industrial output.",
+          "China's demographic decline following its one-child policy is presented as reducing labour supply."
+        ]
+      },
+      {
+        "id": "a2",
+        "name": "Increased pressure on health services",
+        "side": "Thesis",
+        "summary": "Ageing raises demand for chronic-disease treatment, geriatric care and long-term medical support.",
+        "examples": [
+          "Germany introduced long-term care insurance in the 1990s but faces increasing costs.",
+          "Italy's cardiovascular and age-related illnesses place pressure on healthcare budgets."
+        ]
+      },
+      {
+        "id": "a3",
+        "name": "Increased cost to the economy",
+        "side": "Thesis",
+        "summary": "Rising pension and social-benefit costs compete with infrastructure, education and other public spending.",
+        "examples": [
+          "Greece's pension liabilities are cited in relation to its sovereign debt crisis.",
+          "France's pension costs have prompted recurrent strikes and reform debates."
+        ]
+      },
+      {
+        "id": "a4",
+        "name": "Increase in dependency ratio",
+        "side": "Thesis",
+        "summary": "More retirees relative to workers can increase fiscal burdens and pressure on working households.",
+        "examples": [
+          "South Korea's declining fertility is cited as accelerating old-age dependency.",
+          "The essay states that German policymakers anticipate a high dependency burden by 2035."
+        ]
+      },
+      {
+        "id": "a5",
+        "name": "However, immigration policies",
+        "side": "Antithesis",
+        "summary": "Managed immigration can replenish labour supply and fill shortages caused by ageing.",
+        "examples": [
+          "Canada's Express Entry programme attracts skilled migrants for sectors including healthcare and technology.",
+          "Australia's regional settlement schemes direct newcomers to areas with labour demand, including aged care."
+        ]
+      },
+      {
+        "id": "a6",
+        "name": "Promoting efficiency and reducing wastage",
+        "side": "Antithesis",
+        "summary": "Transparent budgeting and careful administration can help preserve pensions and healthcare funding.",
+        "examples": [
+          "Singapore's management of social welfare is presented as supporting elderly citizens.",
+          "Scandinavian countries are cited for oversight of ageing-related services."
+        ]
+      },
+      {
+        "id": "a7",
+        "name": "Strengthening public and private sector collaboration",
+        "side": "Antithesis",
+        "summary": "Cooperation between government, businesses and care providers can support older workers and expand elder care.",
+        "examples": [
+          "Japan's corporate re-employment schemes help older employees remain in work.",
+          "UK partnerships between local authorities and private care providers expand residential and home care."
+        ]
+      },
+      {
+        "id": "a8",
+        "name": "Adapting welfare systems",
+        "side": "Antithesis",
+        "summary": "Pension reform, retirement savings and flexible retirement can support fiscal sustainability.",
+        "examples": [
+          "Singapore's Central Provident Fund uses lifelong contributions to finance retirement.",
+          "The essay proposes that Mauritius complement its Basic Retirement Pension with structured reform and private savings."
+        ]
+      },
+      {
+        "id": "a9",
+        "name": "Life expectancy as a celebration",
+        "side": "Antithesis",
+        "summary": "Active ageing and social participation allow societies to benefit from older people's experience and longevity.",
+        "examples": [
+          "Finland funds local health initiatives supporting independence among seniors.",
+          "Japan's community-based programmes integrate older citizens into social and economic activities."
+        ]
+      }
+    ],
+    "quotes": [
+      {
+        "text": "A society that does not value its older people denies its future.",
+        "author": "Nelson Mandela",
+        "location": "Introduction",
+        "excerpt": false
+      },
+      {
+        "text": "Knowledge is power. Information is liberating. Education is the premise of progress.",
+        "author": "Kofi Annan",
+        "location": "Conclusion",
+        "excerpt": false
+      }
+    ],
+    "note": "Extracted from essay on ageing population.docx. Title describes the essay's subject because no explicit essay question is given. Examples, statistics and quotation attributions have not been independently fact-checked."
   }
 ]
